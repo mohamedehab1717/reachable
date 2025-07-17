@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>wheelchair basketball</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../../style/reach.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="logo">Reachable</div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Where do you want to go today?" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+
+      <div class="language-switcher">
+        <a href="#" class="lang-link">English</a>
+      
+      </div>
+    </div>
+  </nav>
+
+  <!-- Moving Image Slider -->
+  <div class="slider-container">
+    <div class="slider-track">
+      <img src="24.jpg" />
+      <img src="18.jpeg" />
+      <img src="25.jpg" />
+      <img src="24.jpg" />
+      <img src="18.jpeg" />
+      <img src="25.jpg" />
+      <img src="24.jpg" />
+      <img src="18.jpeg" />
+      <img src="25.jpg" />
+    
+    </div>
+  </div>
+
+   <!-- Info Section -->
+   <div class="reachable-info">
+    <h1>Wheelchair basketball</h1>
+    <div class="location">Various Clubs, Egypt</div>
+    <p>
+      Wheelchair basketball is one of the most popular adaptive sports for individuals with physical disabilities. The sport follows similar rules to traditional basketball with a few modifications and is played by athletes in specially designed sports wheelchairs.
+    </p>
+  </div>
+
+
+  
+  <!-- Location -->
+  <div class="key-info">
+    <h2>Where to Play</h2>
+    <p>>Check out local clubs and centers like the Egyptian Paralympic Committee or Maadi Club which host adaptive sports programs .</p>
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.146734798748!2d31.2369505!3d30.0274426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840b5d748f6e3%3A0x7d81f9ddff6e11a1!2sEgyptian%20Paralympic%20Committee!5e0!3m2!1sen!2seg!4v1745348200110!5m2!1sen!2seg" 
+        allowfullscreen="" 
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="key-info" style="border-top: 1px solid #ccc; padding-top: 20px; margin-top: 40px;">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> +20 122 770 4809</p>
+    
+    <p><strong>Email:</strong> --​</p>
+  </div>
+<!-- Feedback Section Combined -->
+<div style="max-width: 800px; margin: 50px auto; background: #fff; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 30px;">
+
+  <!-- Top: Previous Feedbacks -->
+  <div style="margin-bottom: 40px;">
+    <h3 style="margin-bottom: 20px; color: #444;">What Others Said</h3>
+
+    <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+      <p style="margin: 0; font-size: 15px;">"Super intense game! The players were on fire."</p>
+      <div style="color: #FFD700; margin-top: 5px;">★★★★☆</div>
+    </div>
+
+    <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+      <p style="margin: 0; font-size: 15px;">"First time watching a wheelchair basketball game – totally impressed."</p>
+      <div style="color: #FFD700; margin-top: 5px;">★★★★★</div>
+    </div>
+
+   
+
+  <!-- Bottom: Submit Feedback -->
+  <div>
+    <h2 style="margin-bottom: 20px; color: #333;">Leave Your Feedback</h2>
+
+    <label for="feedback" style="display: block; margin-bottom: 10px; font-weight: 600;">Your Opinion</label>
+    <textarea id="feedback" rows="5" style="width: 100%; padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 8px; resize: vertical;"></textarea>
+
+    <div style="margin-top: 20px;">
+      <label style="font-weight: 600; display: block; margin-bottom: 10px;">Your Rating:</label>
+      <div id="rating" style="font-size: 28px; color: #ccc; cursor: pointer;">
+        <i class="fas fa-star" data-value="1"></i>
+        <i class="fas fa-star" data-value="2"></i>
+        <i class="fas fa-star" data-value="3"></i>
+        <i class="fas fa-star" data-value="4"></i>
+        <i class="fas fa-star" data-value="5"></i>
+      </div>
+    </div>
+
+    <button onclick="submitFeedback()" style="margin-top: 25px; padding: 10px 30px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+      Submit
+    </button>
+
+    <div id="submit-message" style="margin-top: 15px; color: green; font-weight: bold;"></div>
+  </div>
+</div>
+
+<!-- Star Rating Script -->
+<script>
+  const stars = document.querySelectorAll('#rating i');
+  let currentRating = 0;
+
+  stars.forEach((star, index) => {
+    star.addEventListener('mouseover', () => highlightStars(index + 1));
+    star.addEventListener('mouseout', () => highlightStars(currentRating));
+    star.addEventListener('click', () => {
+      currentRating = index + 1;
+      highlightStars(currentRating);
+    });
+  });
+
+  function highlightStars(rating) {
+    stars.forEach((star, i) => {
+      star.style.color = i < rating ? '#FFD700' : '#ccc';
+    });
+  }
+
+  function submitFeedback() {
+    const feedbackText = document.getElementById('feedback').value.trim();
+    if (!feedbackText) {
+      alert("Please enter your feedback before submitting.");
+      return;
+    }
+    if (currentRating === 0) {
+      alert("Please rate before submitting.");
+      return;
+    }
+
+    document.getElementById('submit-message').innerText = "Thank you for your feedback!";
+    console.log("Feedback:", feedbackText);
+    console.log("Rating:", currentRating);
+  }
+</script>
+
+</body>
+</html>

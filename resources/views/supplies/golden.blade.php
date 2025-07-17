@@ -1,0 +1,194 @@
+<?php
+// لا يوجد أي معالجة PHP هنا، فقط فتح وإغلاق الوسوم لكي يتعرف عليه السيرفر كملف PHP
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Golden Medic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="<?php echo asset('style/reach.css'); ?>" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="../index/index.html" class="logo">Reachable</a>
+      <div class="search-box">
+        <input type="text" placeholder="Where do you want to go today?" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <div class="right-side">
+        <div class="dropdown">
+          <button class="dropbtn">
+            Categories <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-content">
+          <a href="{{ route('hospitals') }}">Hospitals / Clinics</a>
+          <a href="{{ url('REST/restu.html') }}">Restaurants / Cafes</a>
+          <a href="{{ url('schools') }}">Schools / Colleges</a>
+          <a href="{{ url('malls') }}">Shopping Malls</a>
+          <a href="{{ url('TRANS/transport.html') }}">Public Transport</a>
+          <a href="{{ url('sports') }}">Adaptive Sports</a>
+          <a href="{{ url('jobs/Job.html') }}">Job Opportunities</a>
+          <a href="{{ url('supplies') }}">Supplies Shops</a>
+          </div>
+        </div>
+        <a href="login.html" class="lang-link">Login</a>
+      
+      </div>
+    </div>
+  </nav>
+
+  <!-- Moving Image Slider -->
+  <div class="slider-container">
+    <div class="slider-track">
+    <img src="<?php echo asset('image/image/g1.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g2.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g3.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g4.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g1.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g2.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g3.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g4.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g1.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g2.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g3.jpg'); ?>" />
+      <img src="<?php echo asset('image/image/g4.jpg'); ?>" />
+    </div>
+  </div>
+
+  <!-- Supplies Info -->
+  <div class="reachable-info">
+    <h1>Golden Medic</h1>
+    <div class="location">Cairo, Egypt</div>
+    <p>
+        Golden Medic is a medical supplies company based in New Maadi, Cairo, Egypt. Established in June 2018, the company is dedicated to providing high-quality medical equipment and supplies to residents of Maadi and surrounding areas at fair prices, with the convenience of home delivery services.
+    </p>
+  </div>
+
+  <!-- Products Section -->
+  <div class="key-info">
+    <h2>Products</h2>
+    <ul>
+      <li><strong>-</strong>Wheelchairs: Manual wheelchairs suitable for daily use.</li>
+      <li><strong>-</strong>Walkers and Canes: Assistive devices that provide stability and support for individuals with mobility challenges.</li>
+      <li><strong>-</strong>Underpads: "Dry Plus Underpads" in sizes 180x90 cm and 90x60 cm to protect bedding and furniture.</li>
+      <li><strong>-</strong>Lumbar Belts: Back support belts to assist with lower back pain or injuries.</li>
+      <li><strong>-</strong>Knee and Ankle Supports: Braces and supports to aid in joint stability and mobility.</li>
+    </ul>
+  </div>
+
+  <!-- Location Section -->
+  <div class="key-info">
+    <h2>Location</h2>
+    <p><strong>Address:</strong> Building 2, Street 306, near Saqr Quraish Police Station, in front of the Body Car showroom, New Maadi, Cairo, Egypt.</p>
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.8880938209345!2d31.2844794!3d29.982645899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583974b10a3f8f%3A0x4edc436749c714c8!2sGolden%20Medic%20Maadi%20for%20Medical%20Supplies!5e0!3m2!1sen!2seg!4v1745279484244!5m2!1sen!2seg" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="key-info" style="border-top: 1px solid #ccc; padding-top: 20px; margin-top: 40px;">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> +20 100 033 6888 / +20 102 740 0704</p>
+    <p><strong>Email:</strong> info@goldenmedic.com</p>
+  </div>
+
+  <!-- Feedback Section Combined -->
+  <div style="max-width: 800px; margin: 50px auto; background: #fff; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 30px;">
+
+    <!-- Top: Previous Feedbacks -->
+    <div style="margin-bottom: 40px;">
+      <h3 style="margin-bottom: 20px; color: #444;">What Others Said</h3>
+
+      <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 15px;">"The hospital was clean and organized!"</p>
+        <div style="color: #FFD700; margin-top: 5px;">★★★★☆</div>
+      </div>
+
+      <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 15px;">"Very professional doctors, highly recommend."</p>
+        <div style="color: #FFD700; margin-top: 5px;">★★★★★</div>
+      </div>
+
+      <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 15px;">"Reception was a bit slow, but overall good."</p>
+        <div style="color: #FFD700; margin-top: 5px;">★★★☆☆</div>
+      </div>
+    </div>
+
+    <!-- Bottom: Submit Feedback -->
+    <div>
+      <h2 style="margin-bottom: 20px; color: #333;">Leave Your Feedback</h2>
+
+      <label for="feedback" style="display: block; margin-bottom: 10px; font-weight: 600;">Your Opinion</label>
+      <textarea id="feedback" rows="5" style="width: 100%; padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 8px; resize: vertical;"></textarea>
+
+      <div style="margin-top: 20px;">
+        <label style="font-weight: 600; display: block; margin-bottom: 10px;">Your Rating:</label>
+        <div id="rating" style="font-size: 28px; color: #ccc; cursor: pointer;">
+          <i class="fas fa-star" data-value="1"></i>
+          <i class="fas fa-star" data-value="2"></i>
+          <i class="fas fa-star" data-value="3"></i>
+          <i class="fas fa-star" data-value="4"></i>
+          <i class="fas fa-star" data-value="5"></i>
+        </div>
+      </div>
+
+      <button onclick="submitFeedback()" style="margin-top: 25px; padding: 10px 30px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+        Submit
+      </button>
+
+      <div id="submit-message" style="margin-top: 15px; color: green; font-weight: bold;"></div>
+    </div>
+  </div>
+
+<!-- Star Rating Script -->
+<script>
+  const stars = document.querySelectorAll('#rating i');
+  let currentRating = 0;
+
+  stars.forEach((star, index) => {
+    star.addEventListener('mouseover', () => highlightStars(index + 1));
+    star.addEventListener('mouseout', () => highlightStars(currentRating));
+    star.addEventListener('click', () => {
+      currentRating = index + 1;
+      highlightStars(currentRating);
+    });
+  });
+
+  function highlightStars(rating) {
+    stars.forEach((star, i) => {
+      star.style.color = i < rating ? '#FFD700' : '#ccc';
+    });
+  }
+
+  function submitFeedback() {
+    const feedbackText = document.getElementById('feedback').value.trim();
+    if (!feedbackText) {
+      alert("Please enter your feedback before submitting.");
+      return;
+    }
+    if (currentRating === 0) {
+      alert("Please rate before submitting.");
+      return;
+    }
+
+    document.getElementById('submit-message').innerText = "Thank you for your feedback!";
+    console.log("Feedback:", feedbackText);
+    console.log("Rating:", currentRating);
+  }
+</script>
+
+</body>
+</html>
+<?php
+// نهاية الملف
+?>

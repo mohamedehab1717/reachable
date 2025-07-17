@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Uber - DiDi - InDrive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../../style/reach.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <a href="../index/index.html" class="logo">Reachable</a>
+    <div class="search-box">
+      <input type="text" placeholder="Where do you want to go today?" />
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="right-side">
+      <div class="dropdown">
+        <button class="dropbtn">
+          Categories <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{{ route('hospitals') }}">Hospitals / Clinics</a>
+          <a href="{{ url('REST/restu.html') }}">Restaurants / Cafes</a>
+          <a href="{{ url('schools') }}">Schools / Colleges</a>
+          <a href="{{ url('malls') }}">Shopping Malls</a>
+          <a href="{{ url('TRANS/transport.html') }}">Public Transport</a>
+          <a href="{{ url('sports') }}">Adaptive Sports</a>
+          <a href="{{ url('jobs/Job.html') }}">Job Opportunities</a>
+          <a href="{{ url('supplies') }}">Supplies Shops</a>
+        </div>
+      </div>
+      <a href="login.html" class="lang-link">Login</a>
+    
+    </div>
+  </div>
+</nav>
+
+  <div class="slider-container">
+    <div class="slider-track">
+      <img src="image11.png" />
+      <img src="image46.png" />
+      <img src="image47.png" />
+      <img src="image48.png" />
+      <img src="image11.png" />
+      <img src="image46.png" />
+      <img src="image47.png" />
+      <img src="image48.png" />
+      <img src="image11.png" />
+      <img src="image46.png" />
+      <img src="image47.png" />
+      <img src="image48.png" />
+     
+    </div>
+  </div>
+
+  <div class="reachable-info">
+    <h1>Uber - DiDi - InDrive</h1>
+    <p>
+      Uber, DiDi, and InDrive are the leading ride-hailing apps operating in Egypt, providing easy and convenient transport services for both locals and visitors. All three platforms allow users to book rides via their mobile apps, track vehicles, and select different vehicle options based on their preferences and budget.
+    </p>
+  </div>
+
+  <div class="key-info">
+    <h2>Features</h2>
+    <ul>
+      <li><strong>-</strong> Uber offers UberAssist in some countries (though not yet in Egypt), providing special assistance to riders with disabilities. The app also allows passengers to add ride-specific instructions for drivers, which may include mobility support needs.</li>
+      <li><strong>-</strong> DiDi is still in the early stages of its service in Egypt and, like Uber, does not have a dedicated disability-accessible service. However, the app allows riders to request assistance through special instructions.</li>
+      <li><strong>-</strong> InDrive, a newer service, allows riders to negotiate the fare with drivers directly. While it lacks specific accessibility features, it offers flexibility in terms of cost and travel options. The app also allows users to communicate special needs to drivers, though accessibility support can depend on the driver.  </li>
+    </ul>
+  </div>
+
+  <div class="key-info download-links">
+    <h2>Download the Apps</h2>
+    <ul>
+      <li><strong>Uber:</strong> 
+        <a href="https://play.google.com/store/apps/details?id=com.ubercab" target="_blank">Google Play</a> | 
+        <a href="https://apps.apple.com/app/uber/id368677368" target="_blank">App Store</a>
+      </li>
+      <li><strong>DiDi:</strong> 
+        <a href="https://play.google.com/store/apps/details?id=com.didiglobal.passenger" target="_blank">Google Play</a> | 
+        <a href="https://apps.apple.com/app/didi-rider/id1202324542" target="_blank">App Store</a>
+      </li>
+      <li><strong>InDrive:</strong> 
+        <a href="https://play.google.com/store/apps/details?id=sinet.startup.inDriver" target="_blank">Google Play</a> | 
+        <a href="https://apps.apple.com/app/indrive-rides-affordable/id780125971" target="_blank">App Store</a>
+      </li>
+    </ul>
+  </div>
+
+  <div style="max-width: 800px; margin: 50px auto; background: #fff; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 30px;">
+    <div style="margin-bottom: 40px;">
+      <h3 style="margin-bottom: 20px; color: #444;">What Others Said</h3>
+
+      <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 15px;">"Comfortable and fast ride, but sometimes the prices can be high"</p>
+        <div style="color: #FFD700; margin-top: 5px;">★★★★☆</div>
+      </div>
+
+      <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 15px;">"Better in terms of pricing, but the quality is sometimes not up to expectations"</p>
+        <div style="color: #FFD700; margin-top: 5px;">★★★★★</div>
+      </div>
+
+      <div class="feedback-card" style="margin-bottom: 20px; background: #f8f8f8; padding: 15px 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 15px;">"The prices are really competitive, and negotiating the fare is a great idea. But sometimes the drivers are not cooperative"</p>
+        <div style="color: #FFD700; margin-top: 5px;">★★★☆☆</div>
+      </div>
+    </div>
+
+    <div>
+      <h2 style="margin-bottom: 20px; color: #333;">Leave Your Feedback</h2>
+
+      <label for="feedback" style="display: block; margin-bottom: 10px; font-weight: 600;">Your Opinion</label>
+      <textarea id="feedback" rows="5" style="width: 100%; padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 8px; resize: vertical;"></textarea>
+
+      <div style="margin-top: 20px;">
+        <label style="font-weight: 600; display: block; margin-bottom: 10px;">Your Rating:</label>
+        <div id="rating" style="font-size: 28px; color: #ccc; cursor: pointer;">
+          <i class="fas fa-star" data-value="1"></i>
+          <i class="fas fa-star" data-value="2"></i>
+          <i class="fas fa-star" data-value="3"></i>
+          <i class="fas fa-star" data-value="4"></i>
+          <i class="fas fa-star" data-value="5"></i>
+        </div>
+      </div>
+
+      <button onclick="submitFeedback()" style="margin-top: 25px; padding: 10px 30px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+        Submit
+      </button>
+
+      <div id="submit-message" style="margin-top: 15px; color: green; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('#rating i');
+    let currentRating = 0;
+
+    stars.forEach((star, index) => {
+      star.addEventListener('mouseover', () => highlightStars(index + 1));
+      star.addEventListener('mouseout', () => highlightStars(currentRating));
+      star.addEventListener('click', () => {
+        currentRating = index + 1;
+        highlightStars(currentRating);
+      });
+    });
+
+    function highlightStars(rating) {
+      stars.forEach((star, i) => {
+        star.style.color = i < rating ? '#FFD700' : '#ccc';
+      });
+    }
+
+    function submitFeedback() {
+      const feedbackText = document.getElementById('feedback').value.trim();
+      if (!feedbackText) {
+        alert("Please enter your feedback before submitting.");
+        return;
+      }
+      if (currentRating === 0) {
+        alert("Please rate before submitting.");
+        return;
+      }
+
+      document.getElementById('submit-message').innerText = "Thank you for your feedback!";
+      console.log("Feedback:", feedbackText);
+      console.log("Rating:", currentRating);
+    }
+  </script>
+
+</body>
+</html>

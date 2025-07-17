@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurants & Cafés</title>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgb(57, 206, 209);
+      padding: 10px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color:white;
+    }
+
+    .search-box {
+      position: relative;
+      width: 500px;
+      margin-right: 610px;
+    }
+
+    .search-box input {
+      padding: 8px 35px 8px 15px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .search-box .search-icon {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #333;
+      font-size: 18px;
+    }
+
+    .lang-link {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .right-side {
+       display: flex;
+       align-items: center;
+       gap: 30px; /* توسع المسافات بين الروابط */
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+      border-radius: 8px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 15px;
+      margin-right: -70px;
+    }
+
+    .lang-link {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .lang-link:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+    }
+    .page-title {
+      margin-top: 100px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    .page-title h1 {
+      font-size: 26px;
+      color: #111;
+      margin: 0;
+    }
+
+    .page-subtitle {
+      font-size: 18px;
+      color: #666;
+      
+      text-align: left;
+      margin-bottom:10px; 
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+
+    .place-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .place-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .place-image-box {
+      width: 100%;
+      height: 160px;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .place-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .place-text-box {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .place-name {
+      font-size: 17px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 1px;
+    }
+
+    .place-description {
+      font-size: 14px;
+      color: #3D3C3A;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="../index/index.html" class="logo">Reachable</a>
+      <div class="search-box">
+        <input type="text" placeholder="Where do you want to go today?" />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <div class="right-side">
+        <div class="dropdown">
+          <button class="dropbtn">
+            Categories <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="hospitals/hos.html">Hospitals / Clinics</a>
+            <a href="REST/restu.html">Restaurants / Cafes</a>
+            <a href="schools.html">Schools / Colleges</a>
+            <a href="malls.html">Shopping Malls</a>
+            <a href="TRANS/transport.html">Public Transport</a>
+            <a href="SPORTS/sports.html">Adaptive Sports</a>
+            <a href="jobs/Job.html">Job Opportunities</a>
+            <a href="supplies.html">Supplies Shops</a>
+          </div>
+        </div>
+        <a href="login.html" class="lang-link">Login</a>
+       
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <h1>Restaurants & Cafés</h1>
+    <div class="page-subtitle">Choose your Restaurants & Cafés in Egypt</div>
+  </div>
+
+  <!-- Grid of Places -->
+  <div class="grid">
+    <div class="place-card">
+      <div class="place-image-box">
+        <a href="WOK/wok.html">
+          <img src="image1.png" alt="Wok And Walk" />
+        </a>
+      </div>
+      <div class="place-text-box">
+        <div class="place-name">Wok And Walk</div>
+        <div class="place-description">Asian Cuisine</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-image-box">
+        <a href="KUFTA/Kufta.html">
+          <img src="image2.png" alt="kufta" />
+        </a>
+      </div>
+      <div class="place-text-box">
+        <div class="place-name">kufta</div>
+        <div class="place-description">Traditional Egyptian Food With A Modern Twist</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-image-box">
+        <a href="ALFREDO/AlFredo.html">
+          <img src="image3.png" alt="Al Fredo" />
+        </a>
+      </div>
+      <div class="place-text-box">
+        <div class="place-name">Al Fredo</div>
+        <div class="place-description">Italian Restaurant</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-image-box">
+        <a href="PAUL/paul.html">
+          <img src="image4.png" alt="Paul Café" />
+        </a>
+      </div>
+      <div class="place-text-box">
+        <div class="place-name">Paul Café</div>
+        <div class="place-description">French Bakery Café</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-image-box">
+        <a href="CILANTRO/Cilantro.html">
+          <img src="image5.png" alt="Cilantro" />
+        </a>
+      </div>
+      <div class="place-text-box">
+        <div class="place-name">Cilantro</div>
+        <div class="place-description">Modern Local Cafe</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-image-box">
+        <a href="LAB/lab.html">
+          <img src="image6.png" alt="Espresso Lab" />
+        </a>
+      </div>
+      <div class="place-text-box">
+        <div class="place-name">Espresso Lab</div>
+        <div class="place-description">Gourmet Espresso</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
