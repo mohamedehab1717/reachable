@@ -1,31 +1,33 @@
-# Use official PHP image
+# 1. صورة PHP
 FROM php:8.2-cli
 
-# Install system dependencies
+# 2. تثبيت الأدوات والإضافات المطلوبة
 RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl \
     libzip-dev \
-    && docker-php-ext-install zip pdo pdo_mysql
+    libpng-dev \
+    libonig-dev \
+    && docker-php-ext-install zip pdo pdo_mysql mbstring
 
-# Install Composer
+# 3. نسخ Composer من صورة جاهزة
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Set working directory
+# 4. تحديد مكان الملفات
 WORKDIR /app
 
-# Copy project files
+# 5. نسخ الملفات
 COPY . /app
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
+# 6. تثبيت المكتبات
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Generate app key
+# 7. إعداد Laravel
 RUN php artisan key:generate
 
-# Expose port
+# 8. فتح البورت
 EXPOSE 10000
 
-# Start the Laravel server
+# 9. تشغيل السيرفر
 CMD php artisan serve --host 0.0.0.0 --port 10000
