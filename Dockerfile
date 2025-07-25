@@ -23,8 +23,7 @@ COPY . /app
 # 6. تثبيت المكتبات
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# 7. إعداد Laravel
-RUN php artisan key:generate
+
 
 # 8. فتح البورت
 EXPOSE 10000
