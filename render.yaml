@@ -4,12 +4,15 @@ services:
     env: php
     plan: free
     buildCommand: |
-      composer install
+      composer install --no-dev --optimize-autoloader
       php artisan key:generate
+      php artisan config:cache
     startCommand: php -S 0.0.0.0:10000 -t public
     envVars:
       - key: APP_ENV
         value: production
+      - key: APP_KEY
+        value: base64:PLACEHOLDER  # هيتم توليدها تلقائيًا
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
