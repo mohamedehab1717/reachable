@@ -14,6 +14,6 @@ class Categ_school extends Model
 
     protected $fillable = ['title', 'img1', 'description'];
 
-    // إذا كان لديك علاقات مع النماذج الأخرى يمكنك تعريفها هنا
+    
 }
 

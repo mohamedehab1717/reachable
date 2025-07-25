@@ -31,6 +31,6 @@ public function showSchoolDetails($id)
     return view('schoolsdetails', compact('school'));
 }
 
-    
+
 }
 

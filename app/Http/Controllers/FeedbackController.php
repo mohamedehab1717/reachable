@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    // دالة لعرض التعليقات
+ 
     public function index()
     {
         $feedbacks = Feedback::all();
         return view('feedbacks.index', compact('feedbacks'));
     }
 
-    // دالة لإضافة تعليق
+ 
     public function store(Request $request, $school_id)
 {
-    // التحقق من صحة البيانات المدخلة
+  
     $request->validate([
         'comment' => 'required|string',
         'rating' => 'required|integer|between:1,5',

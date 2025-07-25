@@ -49,13 +49,13 @@
     $imagePath = '';
 
     if (file_exists(public_path('storage/' . $hospital->img))) {
-        // صورة مرفوعة من الأدمن (موجودة في storage)
+        
         $imagePath = asset('storage/' . $hospital->img);
     } elseif (file_exists(public_path('image/image/' . $hospital->img))) {
-        // صورة قديمة موجودة في public/image/image
+    
         $imagePath = asset('image/image/' . $hospital->img);
     } else {
-        // صورة غير موجودة – تقدر تحط صورة افتراضية هنا
+        
         $imagePath = asset('images/default.png');
     }
 @endphp

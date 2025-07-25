@@ -4,17 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\HospitalInfo; // هنا ضروري تستورد HospitalInfo
+use App\Models\HospitalInfo; // 
 
 class Hospital extends Model
 {
     use HasFactory;
 
-    protected $table = 'hospitals'; // تحدد اسم الجدول (مهم عشان اسم الموديل مش جمع)
+    protected $table = 'hospitals'; 
 
     protected $fillable = [
         'name', 'location', 'photo'
-        // زود الأعمدة حسب اللي موجود عندك
+        
     ];
 
     public function info()
