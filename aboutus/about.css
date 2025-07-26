@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgb(57, 206, 209);
+      padding: 10px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color:white;
+    }
+
+    .search-box {
+      position: relative;
+      width: 500px;
+      margin-right: 610px;
+    }
+
+    .search-box input {
+      padding: 8px 35px 8px 15px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .search-box .search-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #333;
+      font-size: 18px;
+    }
+
+    .lang-link {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .right-side {
+       display: flex;
+       align-items: center;
+       gap: 30px; /* توسع المسافات بين الروابط */
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+      border-radius: 8px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 15px;
+      margin-right: -70px;
+    }
+
+    .lang-link {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .lang-link:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .main {
+      display: flex;
+      height: 100vh;
+      padding-top: 55px; /* عشان نسيب مساحة تحت النافبار */
+    }
+
+    .left-section {
+      width: 50%;
+      background: url('abt.png') no-repeat center center;
+      background-size: cover;
+      clip-path: ellipse(75% 100% at 0% 50%);
+    }
+
+    .right-section {
+      width: 50%;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .section h2::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .section.target h2::before {
+      background-image: url('https://img.icons8.com/ios-filled/50/000000/target.png');
+    }
+
+    .section.services h2::before {
+      background-image: url('https://img.icons8.com/ios-filled/50/000000/maintenance.png');
+    }
+
+    .section.vision h2::before {
+      background-image: url('https://img.icons8.com/ios-filled/50/000000/visible.png');
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  

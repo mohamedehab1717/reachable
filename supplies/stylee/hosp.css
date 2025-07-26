@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+      }
+  
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgb(57, 206, 209);
+        padding: 10px 20px;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+      }
+  
+      .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        max-width: 1350px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        
+      }
+  
+      .search-box {
+        position: relative;
+        width: 500px;
+        
+      }
+  
+      .search-box input {
+        padding: 8px 35px 8px 15px;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+      .search-box .search-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #333;
+        font-size: 18px;
+      }
+      .nav-link, .lang-link {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 15px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+  
+      .right-side {
+      display: flex;
+      align-items: center;
+      gap: 30px; /* توسع المسافات بين الروابط */
+      margin-right: 35px;
+      }
+      .flip-icon {
+      transform: scaleX(-1);
+      display: inline-block;
+      }
+  
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      .dropbtn {
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+        border-radius: 8px;
+      }
+  
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s;
+      }
+  
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+  
+  
+      .language-switcher {
+        display: flex;
+        gap: 15px;
+        margin-right: -70px;
+      }
+  
+      .lang-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+  
+      .lang-link:hover {
+        color: #007bff;
+      }
+  
+      /* Slider Animation */
+      .slider-container {
+        overflow: hidden;
+        width: 100%;
+        background: #f7f7f7;
+        padding: 20px 0;
+        margin-top: 50px;
+      }
+  
+      .slider-track {
+        display: flex;
+        width: calc(600px * 6); /* تكبير العرض العام للسلايدر */
+        animation: scroll 20s linear infinite;
+      }
+  
+      .slider-track img {
+        width: 600px; /* نفس العرض لجميع الصور */
+        height: 400px; /* نفس الارتفاع لجميع الصور */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-right: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+  
+      .hospital-info {
+        padding: 30px;
+        max-width: 800px;
+        margin: auto;
+      }
+  
+      .hospital-info h1 {
+        font-size: 32px;
+        margin-bottom: 5px;
+        color: #111;
+      }
+  
+      .hospital-info .location {
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
+      }
+  
+      .hospital-info p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+      }
+  
+      .key-info {
+        margin-top: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 30px;
+      }
+  
+      .key-info h2 {
+        margin-bottom: 15px;
+        font-size: 22px;
+        color: #111;
+      }
+  
+      .key-info ul {
+        list-style: none;
+        padding-left: 0;
+      }
+  
+      .key-info li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #333;
+      }
+  
+      .key-info p {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+      }
+  
+      .map {
+        margin-top: 20px;
+        padding: 0 0 40px 0;
+      }
+  
+      .map iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+        border-radius: 10px;
+      }
+      .key-info h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #111;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
