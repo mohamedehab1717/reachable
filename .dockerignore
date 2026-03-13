@@ -1,0 +1,16 @@
+node_modules
+vendor
+.env
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-entrypoint.sh
+storage/*.key
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.vscode
+.idea

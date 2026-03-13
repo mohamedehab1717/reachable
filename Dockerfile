@@ -1,32 +1,49 @@
-# 1. صورة PHP
-FROM php:8.2-cli
+FROM php:8.1-apache
 
-# 2. تثبيت الأدوات والإضافات المطلوبة
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zip \
     unzip \
     git \
     curl \
-    libzip-dev \
-    libpng-dev \
     libonig-dev \
-    && docker-php-ext-install zip pdo pdo_mysql mbstring
+    libzip-dev \
+    libsqlite3-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql pdo_sqlite mbstring exif pcntl bcmath gd zip
 
-# 3. نسخ Composer من صورة جاهزة
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
 
-# 4. تحديد مكان الملفات
-WORKDIR /app
+# Set working directory
+WORKDIR /var/www/html
 
-# 5. نسخ الملفات
-COPY . /app
+# Copy application files
+COPY . .
 
-# 6. تثبيت المكتبات
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Install dependencies
+RUN composer install --no-dev --optimize-autoloader
 
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# 8. فتح البورت
-EXPOSE 10000
+# Update Apache document root
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-# 9. تشغيل السيرفر
-CMD php artisan serve --host 0.0.0.0 --port 10000
+# Configure Apache to listen on $PORT
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+
+# Use a custom entrypoint
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["apache2-foreground"]
