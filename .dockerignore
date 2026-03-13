@@ -5,7 +5,6 @@ vendor
 .gitignore
 .dockerignore
 Dockerfile
-docker-entrypoint.sh
 storage/*.key
 .phpunit.result.cache
 Homestead.json
