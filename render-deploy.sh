@@ -11,3 +11,6 @@ touch database/database.sqlite
 
 # Clear caches
 php artisan optimize:clear
+
+# Run migrations (force for production)
+php artisan migrate --force
