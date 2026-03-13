@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# Exit on error
+set -e
+
 # Install dependencies
 composer install --no-dev --optimize-autoloader
 
+# Ensure sqlite database exists if needed for fallback
+touch database/database.sqlite
+
 # Clear caches
 php artisan optimize:clear
-
-# Run the Laravel server
-php artisan serve --host=0.0.0.0 --port=$PORT
