@@ -1,8 +1,13 @@
 services:
   - type: web
     name: reachable-website
-    env: node
-    buildCommand: npm install
-    startCommand: npm start
+    env: php
+    buildCommand: "composer install --no-dev --optimize-autoloader"
     plan: free
-    healthCheckPath: / 
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
