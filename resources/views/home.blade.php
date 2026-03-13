@@ -16,12 +16,12 @@
         <div class="dropdown-content">
           <a href="{{ route('hospitals') }}">Hospitals / Clinics</a>
           <a href="{{ url('REST/restu.html') }}">Restaurants / Cafes</a>
-          <a href="{{ url('schools') }}">Schools / Colleges</a>
-          <a href="{{ url('malls') }}">Shopping Malls</a>
+          <a href="{{ route('schools') }}">Schools / Colleges</a>
+          <a href="{{ route('malls') }}">Shopping Malls</a>
           <a href="{{ url('TRANS/transport.html') }}">Public Transport</a>
-          <a href="{{ url('sports') }}">Adaptive Sports</a>
-          <a href="{{ url('jobs/Job.html') }}">Job Opportunities</a>
-          <a href="{{ url('supplies') }}">Supplies Shops</a>
+          <a href="{{ url('SPORTS/sports.html') }}">Adaptive Sports</a>
+          <a href="{{ route('job') }}">Job Opportunities</a>
+          <a href="{{ route('supplies') }}">Supplies Shops</a>
         </div>
       </div>
 
@@ -70,40 +70,38 @@
     </button>
 
     <button class="category-button" onclick="location.href='{{ url('REST/restu.html') }}'" data-aos="fade-up" data-aos-delay="200">
-    <i class="fas fa-utensils"></i>
-    <p>Restaurants / Cafes</p>
-    <p>Enjoy your favorite meals anytime.</p>
-</button>
+      <i class="fas fa-utensils"></i>
+      <p>Restaurants / Cafes</p>
+      <p>Enjoy your favorite meals anytime.</p>
+    </button>
 
     <button class="category-button" onclick="location.href='{{ route('schools') }}'" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-school"></i><p>Schools / Colleges</p><p>Explore educational institutions around you.</p>
-      </button>
+      <i class="fas fa-school"></i><p>Schools / Colleges</p><p>Explore educational institutions around you.</p>
+    </button>
 
-    <button class="category-button" onclick="location.href='{{ url('malls') }}'" data-aos="fade-up" data-aos-delay="400">
+    <button class="category-button" onclick="location.href='{{ route('malls') }}'" data-aos="fade-up" data-aos-delay="400">
       <i class="fas fa-shopping-cart"></i><p>Shopping Malls</p><p>Find all your essentials in one place.</p>
     </button>
 
-    <button class="category-button" onclick="location.href='{{ url('TRANS/transport.html') }}'" data-aos="fade-up" data-aos-delay="500">
-    <i class="fas fa-utensils"></i>
-    <p>Public Transport</p>
-    <p>Find all your essentials in one place.</p>
-</button>
-
+    <button class="category-button" onclick="location.href='{{ url('TRANS/transport.html') }}'" data-aos="zoom-in" data-aos-delay="500">
+      <i class="fas fa-bus"></i>
+      <p>Public Transport</p>
+      <p>Use nearby transport options.</p>
+    </button>
 
     <button class="category-button" onclick="location.href='{{ url('SPORTS/sports.html') }}'" data-aos="zoom-in" data-aos-delay="600">
       <i class="fas fa-running"></i><p>Adaptive Sports</p><p>Join accessible sport activities.</p>
     </button>
 
-    <button class="category-button" onclick="location.href='{{ asset('jobs/Job.html') }}'" data-aos="flip-left" data-aos-delay="700">
-    <i class="fas fa-briefcase"></i>
-    <p>Job Opportunities</p>
-    <p>Browse nearby job offers.</p>
-</button>
+    <button class="category-button" onclick="location.href='{{ route('job') }}'" data-aos="flip-left" data-aos-delay="700">
+      <i class="fas fa-briefcase"></i>
+      <p>Job Opportunities</p>
+      <p>Browse nearby job offers.</p>
+    </button>
 
-
-    <button class="category-button" onclick="location.href='{{ route('supplies') }}'" data-aos="fade-up" data-aos-delay="100">
-    <i class="fas fa-store"></i><p>Supplies Shops</p><p>Find stores for your daily needs.</p>
-</button>
+    <button class="category-button" onclick="location.href='{{ route('supplies') }}'" data-aos="flip-left" data-aos-delay="800">
+      <i class="fas fa-store"></i><p>Supplies Shops</p><p>Find stores for your daily needs.</p>
+    </button>
 
 
 
