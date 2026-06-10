@@ -1,8 +1,14 @@
 services:
   - type: web
     name: reachable-website
-    env: node
-    buildCommand: npm install
-    startCommand: npm start
+    env: php
+    buildCommand: "./render-deploy.sh"
+    startCommand: "php artisan serve --host=0.0.0.0 --port=$PORT"
     plan: free
-    healthCheckPath: / 
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
