@@ -242,4 +242,36 @@
     color: #111;
     display: inline-block;
     padding-bottom: 5px;
+  }@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
+  .search-box {
+    width: 100%;
+    margin-right: 0;
+  }
+  .right-side {
+    margin-right: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .slider-track img {
+    width: 100vw;
+    height: auto;
+  }
+  .reachable-info, .key-info {
+    padding: 15px;
+  }
+}
+/* Premium Enhancements */
+.category-button, .place-card {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.category-button:hover, .place-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,200,200,0.15);
+}

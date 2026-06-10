@@ -204,4 +204,15 @@
       font-size: 18px;
       line-height: 1.4;
     }
-  
+  @media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .right-section {
+    width: 100%;
+    padding: 20px;
+  }
+  .left-section {
+    display: none;
+  }
+}
