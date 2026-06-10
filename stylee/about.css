@@ -26,25 +26,30 @@
       padding: 10px 20px;
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
     }
 
     .navbar-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .logo {
       text-decoration: none;
       font-size: 20px;
       font-weight: bold;
-      color:white;
+      color: white;
+      margin-left: 10px;
     }
 
     .search-box {
       position: relative;
-      width: 500px;
-      margin-right: 610px;
+      flex: 1;
+      max-width: 500px;
+      margin: 0 20px;
     }
 
     .search-box input {
@@ -53,6 +58,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       width: 100%;
+      box-sizing: border-box;
     }
 
     .search-box .search-icon {
@@ -64,19 +70,11 @@
       font-size: 18px;
     }
 
-    .lang-link {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 400;
-      font-size: 15px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
     .right-side {
-       display: flex;
-       align-items: center;
-       gap: 30px; /* توسع المسافات بين الروابط */
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .dropdown {
@@ -204,15 +202,31 @@
       font-size: 18px;
       line-height: 1.4;
     }
+
+  /* Responsive styles */
   @media (max-width: 768px) {
-  .main {
-    flex-direction: column;
+    .main {
+      flex-direction: column;
+      height: auto;
+    }
+    .right-section {
+      width: 100%;
+      padding: 30px 20px;
+    }
+    .left-section {
+      display: none;
+    }
+    .navbar-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .search-box {
+      width: 100%;
+      margin: 10px 0;
+      max-width: 100%;
+    }
+    .right-side {
+      justify-content: center;
+    }
   }
-  .right-section {
-    width: 100%;
-    padding: 20px;
-  }
-  .left-section {
-    display: none;
-  }
-}
